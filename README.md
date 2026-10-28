@@ -1,25 +1,40 @@
 # Noesis Hub
 
-Λογισμικό πτυχιακής εργασίας: πρωτότυπη εφαρμογή ακαδημαϊκής υποστήριξης με React και Vite.
+Noesis Hub is a modern e-class platform designed for an international academic community, bringing course management, study sessions, assessments, and AI Tutors with guardrails into one learning environment.
 
-## Τρέχουσα έκδοση
+Developed as a thesis project, the platform aims to support learning through guided assistance and clear educational boundaries.
 
-Περιλαμβάνει σύνδεση, προφίλ φοιτητή, dashboard, μαθήματα, Study Sessions, ημερολόγιο, υποβολές εργασιών, quizzes και AI Tutor «Σοφούλα», με εναλλαγή ελληνικών και αγγλικών.
+## Platform scope
 
-Το έργο βρίσκεται υπό ανάπτυξη. Η παρούσα έκδοση είναι πρωτότυπο frontend με ενδεικτικά δεδομένα. Η σύνδεση δεν πραγματοποιεί πραγματικό έλεγχο ταυτότητας, οι υποβολές προσομοιώνονται τοπικά και ο AI Tutor χρησιμοποιεί προκαθορισμένες απαντήσεις. Δεν περιλαμβάνεται backend ή σύνδεση με υπηρεσία τεχνητής νοημοσύνης.
+- Student dashboard and profile.
+- Courses and learning materials.
+- Study sessions and calendar.
+- Assignment submissions and quizzes.
+- AI Tutors, including Sofoula, the owl tutor.
+- English and Greek interface options, with English as the default for new users.
 
-## Τοπική εκτέλεση
+## AI Tutors and guardrails
 
-Απαιτούνται Node.js και npm. Η αρχική έκδοση ελέγχθηκε με Node.js 24.
+AI Tutors with guardrails are a core part of the platform's intended design. Planned guardrails include keeping assistance within the selected course context, grounding explanations in approved learning materials, and encouraging understanding rather than completing assessed work on a student's behalf.
+
+These are design goals, not verified capabilities of the current prototype. The current tutor uses predefined, rule-based responses. A model integration, server-side guardrail enforcement, and evaluation of those guardrails remain to be implemented.
+
+## Current implementation
+
+The repository currently contains a React and Vite frontend prototype with sample data. Sign-in is a demonstration flow without authentication, assignment submissions are simulated locally, and tutor replies are predefined. The prototype does not yet include a backend or a connection to an AI service.
+
+## Run locally
+
+Install Node.js and npm. The initial version was checked with Node.js 24.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Ανοίξτε τη διεύθυνση που εμφανίζει το Vite στο τερματικό.
+Open the local address printed by Vite in your terminal.
 
-## Έλεγχοι και build
+## Checks and production build
 
 ```sh
 npm run lint
@@ -27,12 +42,12 @@ npm run build
 npm run preview
 ```
 
-Το build δημιουργείται στον φάκελο `dist`. Το `preview` εξυπηρετεί το build τοπικά.
+The production build is generated in `dist`. The preview command serves that build locally.
 
-## Δομή
+## Project structure
 
-- `src/`: κώδικας React, σελίδες, components, μεταφράσεις και στυλ.
-- `public/`: δημόσια στατικά αρχεία.
-- `package-lock.json`: κλειδωμένες εκδόσεις εξαρτήσεων.
+- `src/`: React pages, components, layouts, translations, and styles.
+- `public/`: public static assets.
+- `package-lock.json`: locked dependency versions.
 
-Τα `node_modules`, `dist` και τοπικά αρχεία `.env` εξαιρούνται από το Git. Τα έγγραφα της πτυχιακής φυλάσσονται ξεχωριστά από το αποθετήριο λογισμικού.
+Dependencies, build output, and local environment files are excluded from Git. The written thesis documents are maintained separately from this platform repository.

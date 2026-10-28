@@ -87,7 +87,7 @@ function Login() {
             Noesis Hub
           </h1>
           <p style={{ fontSize: "13px", color: "#cbd5e1", margin: 0 }}>
-            {lang === "el" ? "Πλατφόρμα Ακαδημαϊκής Υποστήριξης & AI Tutor" : "Academic Support Platform & AI Tutor"}
+            {lang === "el" ? "Σύγχρονη πλατφόρμα e-class με AI Tutors" : "Modern E-class Platform with AI Tutors"}
           </p>
         </div>
 
