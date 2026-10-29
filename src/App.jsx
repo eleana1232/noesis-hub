@@ -19,7 +19,7 @@ function LayoutWithSidebar() {
   const [studentEmail, setStudentEmail] = useState("eleana@noesis.edu");
   const [studentRole, setStudentRole] = useState("Φοιτήτρια Πληροφορικής");
 
-  // Αν βρισκόμαστε στο root, δείχνουμε μόνο το Login χωρίς sidebar
+ 
   if (location.pathname === "/") {
     return <Login />;
   }
