@@ -20,7 +20,7 @@ function AITutorAvatar({ mode = "strict", isThinking = false }) {
           position: "relative",
         }}
       >
-        {/* Ανθρωπάκι με γυαλιά */}
+        {/* An owl wearing glasses. */}
         <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <User size={26} />
           <Glasses size={16} style={{ position: "absolute", top: "5px" }} />
