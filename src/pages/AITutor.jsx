@@ -13,8 +13,8 @@ function AITutor() {
       id: 1,
       sender: "tutor",
       text: lang === "el" 
-        ? "Γεια σου Ελεάνα! Είμαι η Σοφούλα 🦉, ο προσωπικός σου AI Tutor. Πώς μπορώ να σε βοηθήσω με τα μαθήματα ή το capstone project σου σήμερα?"
-        : "Hello Eleana! I'm Sofoula 🦉, your personal AI Tutor. How can I help you with your courses or capstone project today?"
+        ? "Γεια σου! Είμαι η Σοφία 🦉, ο προσωπικός σου AI Tutor. Πώς μπορώ να σε βοηθήσω με τα μαθήματα ή το capstone project σου σήμερα?"
+        : "Hello! I'm Sofia 🦉, your personal AI Tutor. How can I help you with your courses or capstone project today?"
     }
   ]);
 
