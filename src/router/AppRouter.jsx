@@ -10,7 +10,7 @@ import AITutor from "../pages/AITutor";
 import Submissions from "../pages/Submissions";
 import { LayoutDashboard, BookOpen, Calendar as CalendarIcon, CheckSquare, Video, Upload, IdCard, User } from "lucide-react";
 
-// Layout για τις εσωτερικές σελίδες (εμφανίζει Sidebar και περιεχόμενο)
+// Layout
 function MainLayout() {
   const { lang, toggleLanguage } = useLanguage();
 
@@ -86,10 +86,10 @@ function AppRouter() {
   return (
     <Router>
       <Routes>
-        {/* Η αρχική διαδρομή φορτώνει αποκλειστικά το Login */}
+        {/* The root route renders only the Login component*/}
         <Route path="/" element={<Login />} />
         
-        {/* Όλες οι υπόλοιπες διαδρομές φορτώνουν το MainLayout με το Sidebar */}
+        {/* All other routes render MainLayout with the Sidebar */}
         <Route path="/*" element={<MainLayout />} />
       </Routes>
     </Router>
