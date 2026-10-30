@@ -77,7 +77,7 @@ function StudySessions() {
   ]);
   const [inputVal, setInputVal] = useState("");
 
-  // Έξυπνη συνάρτηση με ακαδημαϊκά restrictions και ενεργά links πηγών
+  // Smart function with academic restrictions and clickable source links
   const generateSmartReply = (question) => {
     const q = question.toLowerCase();
 
