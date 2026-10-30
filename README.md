@@ -10,7 +10,7 @@ Developed as a thesis project, the platform aims to support learning through gui
 - Courses and learning materials.
 - Study sessions and calendar.
 - Assignment submissions and quizzes.
-- AI Tutors, including Sofoula, the owl tutor.
+- AI Tutors, including Sofia, the owl tutor.
 - English and Greek interface options, with English as the default for new users.
 
 ## AI Tutors and guardrails
