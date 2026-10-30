@@ -44,56 +44,56 @@ function AITutor() {
       let botReply = "";
       let sourceLink = null;
 
-      // 1. Κομπλιμέντα & επιδοκιμασίες
+      // Compliments & Praise
       if (lower.includes("πρώτη") || lower.includes("πρωτη") || lower.includes("τελεια") || lower.includes("μπράβο") || lower.includes("πωπω")) {
         botReply = lang === "el"
           ? "Σε ευχαριστώ πολύ! 🦉 Χαίρομαι πάρα πολύ που βοηθάω. Συνεχίζουμε δυναμικά; Πες μου σε ποιο σημείο θες να επικεντρωθούμε τώρα!"
           : "Thank you so much! 🦉 I'm thrilled to help. Shall we keep going? Tell me what to focus on next!";
         sourceLink = null;
       }
-      // 2. Ασκήσεις / Εργασίες
+      // Exercises / Assignments
       else if (lower.includes("λύσει") || lower.includes("λυσεις") || lower.includes("ασκησ") || lower.includes("άσκηση") || lower.includes("δούμε") || lower.includes("εξασκησ") || lower.includes("εκρεμμ")) {
         botReply = lang === "el"
           ? "Πολύ ευχαρίστως να τις δούμε! 🦉 Πες μου τι αφορούν οι ασκήσεις (React, PostgreSQL, UX;) και ποιο ακριβώς ερώτημα σε δυσκολεύει, ώστε να σε καθοδηγήσω βήμα-βήμα."
           : "I'd love to help you look at them! 🦉 Tell me what the exercises are about (React, PostgreSQL, UX?) and which exact part is tricky so we can solve it step-by-step.";
         sourceLink = null;
       }
-      // 3. Ερωτήσεις κατάστασης ("τι κάνεις", "πώς είσαι")
+      // Check-in Questions (“What are you up to?”, “How are you?”)
       else if (lower.includes("είσαι καλά") || lower.includes("εισαι καλα") || lower.includes("τι κάνεις") || lower.includes("πως εισαι") || lower.includes("how are you")) {
         botReply = lang === "el"
           ? "Εγώ είμαι μια χαρά, έτοιμη να πετάξω πάνω από τους κώδικες και τα διαγράμματά σου! 🦉 Εσύ πώς είσαι; Πώς μπορώ να σε βοηθήσω σήμερα;"
           : "I'm doing great, ready to fly over your code and diagrams! 🦉 How are you doing? How can I help you today?";
         sourceLink = null;
       }
-      // 4. Απλός χαιρετισμός ("γεια σου", "hello")
+      // Simple greetIng ("γεια σου", "hello")
       else if (lower.includes("γεια") || lower.includes("hello") || lower.includes("hi") || lower.includes("καλημερα")) {
         botReply = lang === "el"
           ? "Γεια σου Ελεάνα! 🦉 Τι θα ήθελες να δούμε ή να ετοιμάσουμε μαζί σήμερα;"
           : "Hello Eleana! 🦉 What would you like us to review or work on together today?";
         sourceLink = null;
       }
-      // 5. Γενική βοήθεια
+      // General Help
       else if (lower.includes("βοηθ") || lower.includes("help") || lower.includes("τι μπορείς")) {
         botReply = lang === "el"
           ? "Φυσικά! Μπορώ να σε βοηθήσω να ξεκολλήσεις από απορίες κώδικα, να οργανώσεις τη βάση δεδομένων σου, να βελτιώσεις το UX design ή να συζητήσουμε τη θεωρία των μαθημάτων. Πού θες να εστιάσουμε; 🦉"
           : "Of course! I can help you debug code, structure your database, improve UX design, or discuss course theory. Where should we focus? 🦉";
         sourceLink = null;
       }
-      // 6. Τεχνικά: React Hooks
+      // 6. Technical: React Hooks
       else if (lower.includes("react") || lower.includes("hook") || lower.includes("state") || lower.includes("χουντ")) {
         botReply = lang === "el"
           ? "Ωραίο θέμα! Στα React hooks, σκέψου αν χρειάζεσαι τοπικό state για κάποιο component ή global state μέσω Context. Ποια λειτουργία προσπαθείς να υλοποιήσεις αυτή τη στιγμή; 🦉"
           : "Great topic! For React hooks, consider whether you need local component state or global state. What feature are you implementing right now? 🦉";
         sourceLink = { title: "React Hooks Reference", url: "https://react.dev/reference/react" };
       } 
-      // 7. Τεχνικά: PostgreSQL / Database
+      // 7. Technical: PostgreSQL / Database
       else if (lower.includes("database") || lower.includes("postgres") || lower.includes("schema") || lower.includes("sql") || lower.includes("erd") || lower.includes("βάση") || lower.includes("πινακ")) {
         botReply = lang === "el"
           ? "Η βάση δεδομένων είναι η καρδιά του e-class σου! Σκέψου τις οντότητες: Φοιτητές, Μαθήματα, Εργασίες. Πώς πιστεύεις ότι συνδέονται μεταξύ τους; 🦉"
           : "The database is the heart of your e-class! Think about the entities: Students, Courses, Submissions. How do you think they relate to each other? 🦉";
         sourceLink = { title: "PostgreSQL Documentation", url: "https://www.postgresql.org/docs/" };
       } 
-      // 8. Τεχνικά: UX Design
+      // 8. Technical: UX Design
       else if (lower.includes("ux") || lower.includes("design") || lower.includes("interface") || lower.includes("figma") || lower.includes("σχεδιασ")) {
         botReply = lang === "el"
           ? "Το UX design θέλει καθαρή ιεραρχία και σωστή πλοήγηση. Δούλεψες καθόλου τα frames στο Figma πριν περάσεις σε κώδικα React; 🦉"
