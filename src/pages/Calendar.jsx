@@ -179,7 +179,7 @@ function Calendar() {
         </AnimatePresence>
       </div>
 
-      {/* Modal Προσθήκης Event με ομαλό spring animation */}
+      {/*Add Event modal with a smooth spring animation*/}
       <AnimatePresence>
         {isModalOpen && (
           <motion.div 
