@@ -1,0 +1,19 @@
+.nh-notebook { max-width: 1120px; padding: 40px 32px; margin: auto; color: #26332f; text-align: left; }
+.nh-notebook * { box-sizing: border-box; }
+.nh-notebook h1 { font-size: 30px; margin: 8px 0 12px; letter-spacing: -.03em; }
+.nh-notebook p { font-size: 14px; line-height: 1.7; color: #596a60; }
+.nh-notebook .nh-notebook-kicker { font-size: 12px; color: #345e4f; }
+.nh-notebook-storage { padding: 14px 18px; border-left: 3px solid #bacbbd; background: #edf2ec; margin: 24px 0; }
+.nh-notebook-layout { display: grid; grid-template-columns: 240px minmax(0,1fr); gap: 30px; }
+.nh-notebook label { display: block; font-size: 13px; font-weight: 600; margin: 18px 0 8px; }
+.nh-notebook input, .nh-notebook textarea, .nh-notebook select { width: 100%; font: inherit; font-size: 14px; padding: 11px; border: 1px solid #cbd5ce; border-radius: 5px; background: white; color: #26332f; }
+.nh-notebook textarea { resize: vertical; }
+.nh-notebook button { font: inherit; font-size: 13px; padding: 11px 16px; border: 1px solid #345e4f; border-radius: 5px; background: #345e4f; color: white; cursor: pointer; }
+.nh-notebook button:disabled { opacity: .5; cursor: not-allowed; }
+.nh-notebook :focus-visible { outline: 2px solid #345e4f; outline-offset: 3px; }
+.nh-notebook .nh-notebook-note { display: block; width: 100%; text-align: left; margin-top: 12px; background: white; color: #26332f; border-color: #dce2de; overflow-wrap: anywhere; }
+.nh-notebook-note span, .nh-notebook-note small { display: block; margin-top: 6px; color: #596a60; font-size: 11px; line-height: 1.6; }
+.nh-notebook .nh-notebook-note[aria-pressed="true"] { border-color: #345e4f; background: #edf2ec; }
+.nh-notebook-save { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 20px; }
+.nh-notebook-save span { font-size: 12px; color: #596a60; }
+@media(max-width: 1000px) { .nh-notebook-layout { grid-template-columns: minmax(0,1fr); } .nh-notebook { padding: 24px 18px; } }

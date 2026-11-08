@@ -9,7 +9,8 @@ import Calendar from "./pages/Calendar";
 import Quiz from "./pages/Quiz";
 import AITutor from "./pages/AITutor";
 import Submissions from "./pages/Submissions";
-import { LayoutDashboard, BookOpen, Calendar as CalendarIcon, CheckSquare, Mail, GraduationCap, IdCard, User, Video, Upload } from "lucide-react";
+import StudyNotebook from "./pages/StudyNotebook";
+import { LayoutDashboard, BookOpen, Calendar as CalendarIcon, CheckSquare, Mail, GraduationCap, NotebookPen, User, Video, Upload } from "lucide-react";
 
 function LayoutWithSidebar() {
   const location = useLocation();
@@ -47,8 +48,12 @@ function LayoutWithSidebar() {
           </h2>
 
           {/* Student Profile Card */}
-          <div
+          <Link
+            to="/profile"
+            aria-label={lang === "el" ? "Άνοιγμα προφίλ" : "Open profile"}
             style={{
+              textDecoration: "none",
+              color: "inherit",
               background: "rgba(255, 255, 255, 0.04)",
               border: "1px solid rgba(255, 255, 255, 0.08)",
               borderRadius: "12px",
@@ -88,12 +93,12 @@ function LayoutWithSidebar() {
                 <GraduationCap size={10} color="#c084fc" /> {studentRole}
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Navigation */}
           <nav style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             <SidebarLink to="/dashboard" icon={<LayoutDashboard size={18} />} text="Dashboard" />
-            <SidebarLink to="/profile" icon={<IdCard size={18} />} text={lang === "el" ? "Η κάρτα μου" : "My Card"} />
+            <SidebarLink to="/notebook" icon={<NotebookPen size={18} />} text={lang === "el" ? "Σημειωματάριο" : "Study Notebook"} />
             <SidebarLink to="/courses" icon={<BookOpen size={18} />} text={lang === "el" ? "Μαθήματα" : "Courses"} />
             <SidebarLink to="/study-sessions" icon={<Video size={18} />} text="Study Sessions" />
             <SidebarLink to="/ai-tutor" icon={<span>🦉</span>} text="AI Tutor" />
@@ -145,6 +150,7 @@ function LayoutWithSidebar() {
             } 
           />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/notebook" element={<StudyNotebook />} />
           <Route path="/study-sessions" element={<StudySessions />} />
           <Route path="/ai-tutor" element={<AITutor />} />
           <Route path="/calendar" element={<Calendar />} />
@@ -168,7 +174,7 @@ function ProfilePage({ studentName, setStudentName, studentEmail, setStudentEmai
   return (
     <div style={{ padding: "32px", maxWidth: "700px", margin: "0 auto" }}>
       <h1 style={{ fontSize: "24px", fontWeight: "700", color: "#1e293b", marginBottom: "8px" }}>
-        {lang === "el" ? "Η κάρτα μου & Στοιχεία Φοιτητή" : "My Student Card & Profile"}
+        {lang === "el" ? "Το προφίλ μου" : "My Profile"}
       </h1>
       <p style={{ color: "#64748b", fontSize: "14px", marginBottom: "24px" }}>
         {lang === "el" ? "Διαχειρίσου τις προσωπικές σου πληροφορίες και την ακαδημαϊκή σου ταυτότητα." : "Manage your personal info and academic identity."}
