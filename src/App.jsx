@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MotionConfig } from "framer-motion";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import { LanguageProvider, useLanguage } from "./context/LanguageContext";
 import Login from "./pages/Login";
@@ -10,7 +11,7 @@ import Quiz from "./pages/Quiz";
 import AITutor from "./pages/AITutor";
 import Submissions from "./pages/Submissions";
 import StudyNotebook from "./pages/StudyNotebook";
-import { LayoutDashboard, BookOpen, Calendar as CalendarIcon, CheckSquare, Mail, GraduationCap, NotebookPen, User, Video, Upload } from "lucide-react";
+import { LayoutDashboard, BookOpen, Calendar as CalendarIcon, CheckSquare, Mail, GraduationCap, NotebookPen, User, Video, Upload, MessageSquare } from "lucide-react";
 
 function LayoutWithSidebar() {
   const location = useLocation();
@@ -101,7 +102,7 @@ function LayoutWithSidebar() {
             <SidebarLink to="/notebook" icon={<NotebookPen size={18} />} text={lang === "el" ? "Σημειωματάριο" : "Study Notebook"} />
             <SidebarLink to="/courses" icon={<BookOpen size={18} />} text={lang === "el" ? "Μαθήματα" : "Courses"} />
             <SidebarLink to="/study-sessions" icon={<Video size={18} />} text="Study Sessions" />
-            <SidebarLink to="/ai-tutor" icon={<span>🦉</span>} text="AI Tutor" />
+            <SidebarLink to="/ai-tutor" icon={<MessageSquare size={18} />} text="AI Tutor" />
             <SidebarLink to="/calendar" icon={<CalendarIcon size={18} />} text={lang === "el" ? "Ημερολόγιο" : "Calendar"} />
             <SidebarLink to="/submissions" icon={<Upload size={18} />} text={lang === "el" ? "Υποβολές" : "Submissions"} />
             <SidebarLink to="/quizzes" icon={<CheckSquare size={18} />} text="Quizzes" />
@@ -133,6 +134,7 @@ function LayoutWithSidebar() {
 
       {/* Main Content */}
       <main style={{ flex: 1, overflowY: "auto", background: "#f8fafc" }}>
+        <div key={location.pathname} className="nh-route-transition">
         <Routes>
           <Route path="/dashboard" element={<Dashboard studentName={studentName} />} />
           <Route 
@@ -157,6 +159,7 @@ function LayoutWithSidebar() {
           <Route path="/submissions" element={<Submissions />} />
           <Route path="/quizzes" element={<Quiz />} />
         </Routes>
+        </div>
       </main>
     </div>
   );
@@ -254,6 +257,8 @@ function SidebarLink({ to, icon, text }) {
   return (
     <Link
       to={to}
+      className="nh-sidebar-link"
+      aria-current={isActive ? "page" : undefined}
       style={{
         display: "flex",
         alignItems: "center",
@@ -265,7 +270,6 @@ function SidebarLink({ to, icon, text }) {
         textDecoration: "none",
         fontSize: "14px",
         fontWeight: "600",
-        transition: "all 0.2s ease",
       }}
     >
       <span style={{ color: isActive ? "#2f80ed" : "#94a3b8" }}>{icon}</span>
@@ -276,6 +280,7 @@ function SidebarLink({ to, icon, text }) {
 
 function App() {
   return (
+    <MotionConfig reducedMotion="user" transition={{ duration: 0.24, ease: [0.2, 0.7, 0.3, 1] }}>
     <LanguageProvider>
       <Router>
         <Routes>
@@ -283,6 +288,7 @@ function App() {
         </Routes>
       </Router>
     </LanguageProvider>
+    </MotionConfig>
   );
 }
 

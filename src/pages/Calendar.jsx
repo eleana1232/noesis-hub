@@ -92,9 +92,7 @@ function Calendar() {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      initial={false}
       style={{ padding: "20px", maxWidth: "950px", margin: "0 auto", textAlign: "center" }}
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>

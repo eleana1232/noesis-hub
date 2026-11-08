@@ -40,3 +40,71 @@ html, body, #root {
   color: var(--text-main);
   transition: background 0.3s ease, color 0.3s ease;
 }
+
+/* Animate the incoming route while the sidebar stays in place. */
+.nh-route-transition {
+  animation: nh-route-fade 160ms ease-out both;
+  min-width: 0;
+}
+
+@keyframes nh-route-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* Shared rhythm: the header arrives first, followed by the main content. */
+.nh-route-transition > * > *,
+.nh-panel-flow,
+.nh-stagger-flow > * {
+  animation: nh-route-enter 240ms cubic-bezier(.2, .7, .3, 1) backwards;
+}
+.nh-route-transition > * > :nth-child(2), .nh-stagger-flow > :nth-child(2) { animation-delay: 40ms; }
+.nh-route-transition > * > :nth-child(3), .nh-stagger-flow > :nth-child(3) { animation-delay: 80ms; }
+.nh-route-transition > * > :nth-child(n+4), .nh-stagger-flow > :nth-child(n+4) { animation-delay: 120ms; }
+
+/* Controls keep the same feedback across all sections. */
+.nh-route-transition button,
+.nh-route-transition a,
+.nh-route-transition input,
+.nh-route-transition textarea,
+.nh-route-transition select {
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+}
+.nh-route-transition button:active:not(:disabled),
+.nh-route-transition a:active { filter: brightness(.95); }
+.nh-route-transition :is(input, textarea, select):focus-visible {
+  outline: 2px solid #8aa79a;
+  outline-offset: 2px;
+}
+
+@keyframes nh-route-enter {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: none; }
+}
+
+.nh-sidebar-link {
+  position: relative;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.nh-sidebar-link:hover { transform: translateX(3px); }
+.nh-sidebar-link:focus-visible { outline: 2px solid #c4b5fd; outline-offset: 2px; }
+.nh-sidebar-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 25%;
+  height: 50%;
+  width: 3px;
+  border-radius: 2px;
+  background: #93c5fd;
+  opacity: 0;
+  transform: scaleY(.4);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+.nh-sidebar-link[aria-current="page"]::before { opacity: 1; transform: scaleY(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .nh-route-transition > * > *, .nh-panel-flow, .nh-stagger-flow > * { animation: none; }
+  .nh-route-transition :is(button, a, input, textarea, select) { transition: none; }
+  .nh-route-transition, html, body, #root { animation: none; }
+  .nh-sidebar-link, .nh-sidebar-link::before { transition: none; }
+  .nh-sidebar-link:hover { transform: none; }
+}

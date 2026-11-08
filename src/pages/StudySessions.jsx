@@ -138,13 +138,11 @@ function StudySessions() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      initial={false}
       style={{ padding: "32px", maxWidth: "1100px", margin: "0 auto", position: "relative", minHeight: "100vh" }}
     >
       {activeSession ? (
-        <div>
+        <div key="session-detail" className="nh-panel-flow">
           <button
             onClick={() => {
               setActiveSession(null);
@@ -336,7 +334,7 @@ function StudySessions() {
           </div>
         </div>
       ) : (
-        <div>
+        <div key="session-list" className="nh-panel-flow">
           <div style={{ marginBottom: "24px" }}>
             <h1 style={{ fontSize: "24px", fontWeight: "700", marginBottom: "8px" }}>
               {lang === "el" ? "Συνεδρίες Μελέτης" : "Study Sessions"}
@@ -352,7 +350,7 @@ function StudySessions() {
                 key={session.id}
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 + index * 0.1 }}
+                transition={{ duration: 0.24, ease: [0.2, 0.7, 0.3, 1], delay: Math.min(index, 3) * 0.04 }}
                 style={{
                   background: "var(--card-bg, #ffffff)",
                   color: "var(--text-main, #1e293b)",

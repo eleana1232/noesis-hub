@@ -67,9 +67,7 @@ function Courses() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      initial={false}
       style={{ padding: "32px", maxWidth: "1100px", margin: "0 auto" }}
     >
       <div style={{ marginBottom: "24px" }}>
@@ -82,7 +80,7 @@ function Courses() {
       </div>
 
       {selectedCourse ? (
-        <div style={{ background: "#ffffff", borderRadius: "16px", border: "1px solid #eaeaea", padding: "28px", boxShadow: "0 4px 12px rgba(0,0,0,0.03)" }}>
+        <div key="course-detail" className="nh-panel-flow" style={{ background: "#ffffff", borderRadius: "16px", border: "1px solid #eaeaea", padding: "28px", boxShadow: "0 4px 12px rgba(0,0,0,0.03)" }}>
           <button
             onClick={() => setSelectedCourse(null)}
             style={{ background: "transparent", border: "none", color: "#9333ea", fontSize: "13px", fontWeight: "600", cursor: "pointer", marginBottom: "16px", display: "flex", alignItems: "center", gap: "6px" }}
@@ -144,7 +142,7 @@ function Courses() {
           </div>
         </div>
       ) : (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "20px" }}>
+        <div key="course-list" className="nh-stagger-flow" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "20px" }}>
           {coursesList.map((course) => (
             <div
               key={course.id}

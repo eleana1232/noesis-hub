@@ -7,9 +7,7 @@ function Quiz() {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35 }}
+      initial={false}
     >
       <div className="page-header">
         <p className="page-kicker">{t.quizKicker}</p>
