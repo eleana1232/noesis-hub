@@ -67,10 +67,10 @@ function StudySessions() {
   const [activeSession, setActiveSession] = useState(null);
   const [chatOpen, setChatOpen] = useState(false);
   
-  const tutorName = lang === "el" ? "Σοφούλα" : "Sophia";
+  const tutorName = "Owlly";
   const initialGreeting = lang === "el" 
-    ? `Γεια σου Ελεάνα! Είμαι η ${tutorName}. Διάλεξε ενότητα ή ρώτησε με ό,τι απορία έχεις για το μάθημα!` 
-    : `Hello Eleana! I am ${tutorName}. Choose a section or ask me any questions about the course!`;
+    ? `Γεια σου! Είμαι η ${tutorName}. Διάλεξε ενότητα ή ρώτησε με ό,τι απορία έχεις για το μάθημα!`
+    : `Hello! I am ${tutorName}. Choose a section or ask me any questions about the course!`;
 
   const [messages, setMessages] = useState([
     { sender: "bot", text: initialGreeting }
@@ -390,7 +390,7 @@ function StudySessions() {
                     onClick={() => {
                       setActiveSession(session);
                       setMessages([
-                        { sender: "bot", text: lang === "el" ? `Γεια σου Ελεάνα! Είμαι η ${tutorName}. Είσαι έτοιμη να ξεκινήσουμε τη συνεδρία για το "${session.title}";` : `Hello Eleana! I am ${tutorName}. Are you ready to start the session for "${session.title}"?` }
+                        { sender: "bot", text: lang === "el" ? `Γεια σου! Είμαι η ${tutorName}. Είσαι έτοιμη να ξεκινήσουμε τη συνεδρία για το "${session.title}";` : `Hello! I am ${tutorName}. Are you ready to start the session for "${session.title}"?` }
                       ]);
                     }}
                     style={{

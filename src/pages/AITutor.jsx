@@ -13,8 +13,8 @@ function AITutor() {
       id: 1,
       sender: "tutor",
       text: lang === "el" 
-        ? "Γεια σου Ελεάνα! Είμαι η Σοφούλα 🦉, ο προσωπικός σου AI Tutor. Πώς μπορώ να σε βοηθήσω με τα μαθήματα ή το capstone project σου σήμερα?"
-        : "Hello Eleana! I'm Sofoula 🦉, your personal AI Tutor. How can I help you with your courses or capstone project today?"
+        ? "Γεια σου! Είμαι ο Owlly 🦉, ο προσωπικός σου AI Tutor. Πώς μπορώ να σε βοηθήσω με τα μαθήματα ή το capstone project σου σήμερα?"
+        : "Hello! I'm Owlly 🦉, your personal AI Tutor. How can I help you with your courses or capstone project today?"
     }
   ]);
 
@@ -68,8 +68,8 @@ function AITutor() {
       // 4. Απλός χαιρετισμός ("γεια σου", "hello")
       else if (lower.includes("γεια") || lower.includes("hello") || lower.includes("hi") || lower.includes("καλημερα")) {
         botReply = lang === "el"
-          ? "Γεια σου Ελεάνα! 🦉 Τι θα ήθελες να δούμε ή να ετοιμάσουμε μαζί σήμερα;"
-          : "Hello Eleana! 🦉 What would you like us to review or work on together today?";
+          ? "Γεια σου! 🦉 Τι θα ήθελες να δούμε ή να ετοιμάσουμε μαζί σήμερα;"
+          : "Hello! 🦉 What would you like us to review or work on together today?";
         sourceLink = null;
       }
       // 5. Γενική βοήθεια

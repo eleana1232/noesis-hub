@@ -15,9 +15,9 @@ function LayoutWithSidebar() {
   const location = useLocation();
   const { lang, toggleLanguage } = useLanguage();
 
-  const [studentName, setStudentName] = useState("Ελεάνα");
+  const [studentName, setStudentName] = useState("Student");
   const [studentEmail, setStudentEmail] = useState("eleana@noesis.edu");
-  const [studentRole, setStudentRole] = useState("Φοιτήτρια Πληροφορικής");
+  const [studentRole, setStudentRole] = useState("Computer Science Student");
 
   // Αν βρισκόμαστε στο root, δείχνουμε μόνο το Login χωρίς sidebar
   if (location.pathname === "/") {
