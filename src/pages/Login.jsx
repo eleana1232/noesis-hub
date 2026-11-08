@@ -34,7 +34,7 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     if (isLocked) return;
-    // Demo only: replace with server authentication before production use.
+    // Demo 
     if (email.trim().toLowerCase() !== "eleana@noesis.edu" || password !== "NoesisDemo!2026") {
       const nextAttempts = failedAttempts + 1;
       setFailedAttempts(nextAttempts);

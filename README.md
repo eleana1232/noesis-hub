@@ -1,6 +1,6 @@
 # Noesis Hub
 
-Noesis Hub is a modern e-class platform designed for an international academic community, bringing course management, study sessions, assessments, and AI Tutors with guardrails into one learning environment.
+Noesis Hub is a modern e-class platform designed for an academic community, bringing course management, study sessions, assessments, and AI Tutors with guardrails into one learning environment.
 
 Developed as a thesis project, the platform aims to support learning through guided assistance and clear educational boundaries.
 
@@ -10,7 +10,7 @@ Developed as a thesis project, the platform aims to support learning through gui
 - Courses and learning materials.
 - Study sessions and calendar.
 - Assignment submissions and quizzes.
-- AI Tutors, including Sofoula, the owl tutor.
+- AI Tutors, including Owlly, the owl tutor.
 - English and Greek interface options, with English as the default for new users.
 
 ## AI Tutors and guardrails
